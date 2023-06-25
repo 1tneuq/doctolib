@@ -1,0 +1,35 @@
+
+<!-- ----- début vueSpecialiteId -->
+<?php
+
+require ($root . '/doctolib/vue/templates/doctolib_header.html');
+?>
+
+<body>
+  <div class="container bg-white">
+    <?php
+    include $root . '/doctolib/vue/templates/doctolib_menu_administrateur.php';
+    include $root . '/doctolib/vue/templates/doctolib_jumbotron.html';
+    ?>
+
+      <table class = "table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope = "col">id</th>
+            <th scope = "col">label</th>
+          </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($results as $element) {
+             printf("<tr><td>%d</td><td>%s</td></tr>", $element['id'],
+               $element['label']);
+            }
+            ?>
+        </tbody>
+      </table>
+    </div>
+
+  <?php include $root . '/doctolib/vue/templates/doctolib_footer.html'; ?>
+
+  <!-- ----- fin vueSpecialiteId -->
